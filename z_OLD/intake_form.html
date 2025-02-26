@@ -110,54 +110,44 @@
         <p class="section-subtitle">Tell us about your project</p>
         
         <div class="intake-form">
-    <form id="projectForm" action="https://formspree.io/f/mzzdlqaa" method="POST">
-        <input type="hidden" name="_subject" value="New Project Inquiry from HAUS Website">
-        
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="company">Company</label>
-            <input type="text" id="company" name="company" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="projectType">Project Type</label>
-            <select id="projectType" name="projectType" required>
-                <option value="">Select a project type</option>
-                <option value="production">Automation Solution</option>
-                <option value="production">Podcast Solution</option>
-                <option value="production">Infrastructure Purchase & Integration</option>
-                <option value="production">Production Systems</option>
-                <option value="asset">Asset Management</option>
-                <option value="distribution">Distribution Matrix</option>
-                <option value="custom">Custom Solution</option>
-            </select>
-        </div>
-        
-        <div class="form-group">
-            <label for="description">Project Description</label>
-            <textarea id="description" name="message" rows="4"></textarea>
-        </div>
-
-        <!-- Redirect to thank you page -->
-        <input type="hidden" name="_next" value="thank-you.html">
-        
-        <button type="submit" class="submit-button">Let's Engineer Together</button>
-    </form>
-</div>
-                <!-- Redirect to custom thank you page -->
-                <input type="hidden" name="_next" value="https://haus.video/thank-you.html">
+            <form id="projectForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" name="company" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="projectType">Project Type</label>
+                    <select id="projectType" name="projectType" required>
+                        <option value="">Select a project type</option>
+                        <option value="production">Production Systems</option>
+                        <option value="asset">Asset Management</option>
+                        <option value="distribution">Distribution Matrix</option>
+                        <option value="custom">Custom Solution</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">Project Description</label>
+                    <textarea id="description" name="description" rows="4"></textarea>
+                </div>
                 
                 <button type="submit" class="submit-button">Let's Engineer Together</button>
             </form>
+            
+            <div id="successMessage" class="success-message">
+                Thanks for reaching out! Our engineering team will contact you within 24 hours to discuss your project.
+            </div>
         </div>
     </section>
 
@@ -183,12 +173,29 @@
             <div class="footer-col">
                 <h3>Let's Connect</h3>
                 <div class="social-links">
-                    <a href="https://www.instagram.com/hausmediasystems/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/company/haus-media-systems-llc/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.facebook.com/profile.php?id=61571434037716" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
     </footer>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            const successMessage = document.getElementById('successMessage');
+            const form = document.getElementById('projectForm');
+            
+            // In a real implementation, you'd send the form data to your server here
+            
+            // Show success message
+            successMessage.classList.add('visible');
+            form.style.display = 'none';
+            
+            // Optionally, reset form
+            form.reset();
+        }
+    </script>
 </body>
 </html>

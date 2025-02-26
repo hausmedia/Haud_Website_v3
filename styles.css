@@ -592,7 +592,8 @@ h2.section-title {
     font-size: 1.2rem;
     color: var(--light);
     text-decoration: none;
-    background: linear-gradient(135deg, var(--primary), var(--accent));
+    text-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #3BA599, #7CCCBD); /* Darker version of your teal colors */
     border-radius: 100px;
     border: none;
     cursor: pointer;
@@ -601,8 +602,8 @@ h2.section-title {
 
 .engineer-button:hover {
     transform: translateY(-2px);
+    background: linear-gradient(135deg, #329589, #6BB9AA); /* Even darker on hover */
 }
-
 /* Footer */
 footer {
     background: rgba(10, 27, 31, 0.95);
