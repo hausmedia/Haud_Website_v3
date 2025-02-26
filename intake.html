@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAUS | Next-Gen Media Systems</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles for the intake form */
+        .intake-form {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            transition: all 0.3s ease;
+        }
+
+        .intake-form:hover {
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--light);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: var(--light);
+            font-family: var(--haus-font);
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 16px;
+            background: var(--gradient-1);
+            border: none;
+            border-radius: 100px;
+            color: var(--light);
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .success-message {
+            display: none;
+            background: rgba(0, 255, 0, 0.1);
+            border: 1px solid rgba(0, 255, 0, 0.3);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .success-message.visible {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <nav class="glass-nav">
+        <a href="index.html" class="logo">HAUS</a>
+        <div class="nav-links">
+            <a href="index.html#solutions">Solutions</a>
+            <a href="index.html#case-studies">Results</a>
+            <a href="index.html#statistics">Impact</a>
+            <a href="intake.html">Intake</a>
+            <a href="index.html#contact">Connect</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Transform Your Media Workflow</h1>
+            <p>Join the next generation of media pioneers. Let's engineer your success story.</p>
+        </div>
+    </header>
+    <section class="solutions-section">
+        <h2 class="section-title">Let's Build Something Epic</h2>
+        <p class="section-subtitle">Tell us about your project</p>
+        
+        <div class="intake-form">
+            <form id="projectForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" name="company" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="projectType">Project Type</label>
+                    <select id="projectType" name="projectType" required>
+                        <option value="">Select a project type</option>
+                        <option value="production">Production Systems</option>
+                        <option value="asset">Asset Management</option>
+                        <option value="distribution">Distribution Matrix</option>
+                        <option value="custom">Custom Solution</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">Project Description</label>
+                    <textarea id="description" name="description" rows="4"></textarea>
+                </div>
+                
+                <button type="submit" class="submit-button">Let's Engineer Together</button>
+            </form>
+            
+            <div id="successMessage" class="success-message">
+                Thanks for reaching out! Our engineering team will contact you within 24 hours to discuss your project.
+            </div>
+        </div>
+    </section>
+
+    <section class="transform-section">
+        <h2 class="transform-title">Ready to Transform Your Media Pipeline?</h2>
+        <div class="transform-cta">
+            <a href="index.html#contact" class="engineer-button">Schedule Engineering Consult</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>HAUS</h3>
+                <p>Next-Gen Media Systems</p>
+            </div>
+            <div class="footer-col">
+                <h3>The Stack</h3>
+                <a href="index.html#production">Production</a>
+                <a href="index.html#network">Neural Net</a>
+                <a href="index.html#distribution">Distribution</a>
+            </div>
+            <div class="footer-col">
+                <h3>Let's Connect</h3>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            const successMessage = document.getElementById('successMessage');
+            const form = document.getElementById('projectForm');
+            
+            // In a real implementation, you'd send the form data to your server here
+            
+            // Show success message
+            successMessage.classList.add('visible');
+            form.style.display = 'none';
+            
+            // Optionally, reset form
+            form.reset();
+        }
+    </script>
+</body>
+</html>
